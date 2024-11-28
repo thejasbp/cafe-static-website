@@ -1,8 +1,8 @@
-from ubuntu:latest
-run apt-get update -y && apt-get install -y apache2
-copy . /var/www/html/
+FROM ubuntu:latest
+RUN apt-get update -y && apt-get install -y apache2
+COPY . /var/www/html/
 #run systemctl restrat apache2
-expose 80
+EXPOSE 80
 #FROM ubuntu:latest
 #ARG DEBIAN_FRONTEND=noninteractive
 #RUN sed -i 's/http:\/\/archive.ubuntu.com\/ubuntu\//https:\/\/archive.ubuntu.com\/ubuntu\//g' /etc/apt/sources.list
